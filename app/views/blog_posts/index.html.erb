@@ -1,0 +1,35 @@
+<a class="btn btn-primary" href="<%= new_blog_post_path %>">Add New Blog</a>
+
+<table class="table table-bordered">
+  <thead class="bg-info">
+    <tr>
+      <th>Title</th>
+      <th>Summary</th>
+      <th>User ID</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @blog_posts.each do |blog_post| %>
+    <tr>
+      <td>
+        <a class="btn btn-info" href="<%= blog_post_path(blog_post.id) %>"><%=blog_post.title%></a>
+      </td>
+      <td>
+        <%=blog_post.summary%>
+      </td>
+      <td>
+        <%=blog_post.user_id%>
+      </td>
+      <td>
+        <a class="btn btn-warning" href="<%=edit_blog_post_path(blog_post.id)%>">Edit</a>
+      </td>
+      <td>
+        <%= link_to "Delete", @blog_post, method: :delete,
+                                  data: { confirm: "You sure?" },
+                                  class: "btn btn-danger" %>
+      </td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>

@@ -1,0 +1,26 @@
+<a class="btn btn-primary" href="<%= blog_posts_path %>">Back</a>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td class="bg-info">Title</td>
+      <td><%= @blog_post.title %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">Summary</td>
+      <td><%= @blog_post.summary %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">Content</td>
+      <td><%= @blog_post.content %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">User ID</td>
+      <td><%= @blog_post.user_id %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">Title Image URL</td>
+      <td><%= @blog_post.title_image_url %></td>
+    </tr>
+  </tbody>
+</table>

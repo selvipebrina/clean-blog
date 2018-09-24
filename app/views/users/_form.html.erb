@@ -1,11 +1,11 @@
 <%= form_for(@user) do |f| %>
   <div class="row control-group">
-    <div class="form-group col-xs-12 floating-label-form-group controls">
-      <%= f.text_field :name, placeholder: "Name", size: "50" %>
-      <%= f.text_field :email, placeholder: "Email", size: "50" %>
-      <%= f.password_field :password, placeholder: "Password", size: "50" %>
-      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", size: "50" %>
-      <%= f.check_box :is_admin %>
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: "Name", size: "50", class: 'form-control' %>
+      <%= f.text_field :email, placeholder: "Email", size: "50", class: 'form-control' %>
+      <%= f.password_field :password, placeholder: "Password", size: "50", class: 'form-control' %>
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", size: "50", class: 'form-control' %>
+      <%= f.check_box :is_admin, class: 'form-control' %>
       <%= f.submit "Submit", class:"btn btn-default" %>
     </div>
   </div>

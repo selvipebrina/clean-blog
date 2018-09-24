@@ -1,4 +1,4 @@
-<a href="<%= new_user_path %>">Add New User</a>
+<a class="btn btn-primary" href="<%= new_user_path %>">Add New User</a>
 
 <table class="table table-bordered">
   <thead class="bg-info">
@@ -14,7 +14,7 @@
     <% @users.each do |user| %>
     <tr>
       <td>
-        <%=user.name%>
+        <a class="btn btn-info" href="<%= user_path(user.id) %>"><%=user.name%></a>
       </td>
       <td>
         <%=user.email%>
@@ -26,10 +26,12 @@
         <%=user.is_admin%>
       </td>
       <td>
-        <a href="<%=edit_user_path(user.id)%>">Edit</a>
+        <a class="btn btn-warning" href="<%=edit_user_path(user.id)%>">Edit</a>
       </td>
       <td>
-        <button href="<%=user_path(user.id)%>">Destroy</button>
+        <%= link_to "Delete", @user, method: :delete,
+                                  data: { confirm: "You sure?" },
+                                  class: "btn btn-danger" %>
       </td>
     </tr>
   </tbody>

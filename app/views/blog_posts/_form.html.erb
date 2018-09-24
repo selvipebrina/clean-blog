@@ -1,0 +1,10 @@
+<%= form_for(@blog_post) do |f| %>
+    <div class="form-group">
+      <%= f.text_field :title, placeholder: "Title", size: "50", class: 'form-control' %>
+      <%= f.text_field :summary, placeholder: "Summary", size: "100", class: 'form-control' %>
+      <%= f.text_field :content, placeholder: "Content", size: "200", class: 'form-control' %>
+      <%= f.text_field :user_id, placeholder: "User ID", size: "50", class: 'form-control' %>
+      <%= f.text_field :title_image_url, placeholder: "Title Image URL", size: "50", class: 'form-control' %>
+      <%= f.submit "Submit", class:"btn btn-default" %>
+    </div>
+<%end%>
