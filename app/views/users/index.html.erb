@@ -1,0 +1,37 @@
+<a href="<%= new_user_path %>">Add New User</a>
+
+<table class="table table-bordered">
+  <thead class="bg-info">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Is Admin?</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%=user.name%>
+      </td>
+      <td>
+        <%=user.email%>
+      </td>
+      <td>
+        <%=user.password_digest%>
+      </td>
+      <td>
+        <%=user.is_admin%>
+      </td>
+      <td>
+        <a href="<%=edit_user_path(user.id)%>">Edit</a>
+      </td>
+      <td>
+        <button href="<%=user_path(user.id)%>">Destroy</button>
+      </td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>

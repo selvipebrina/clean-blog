@@ -1,0 +1,22 @@
+<a href="<%= users_path %>">Back</a>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td class="bg-info">Name</td>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">Email</td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">Password</td>
+      <td><%= @user.password_digest %></td>
+    </tr>
+    <tr>
+      <td class="bg-info">Is Admin</td>
+      <td><%= @user.is_admin %></td>
+    </tr>
+  </tbody>
+</table>
