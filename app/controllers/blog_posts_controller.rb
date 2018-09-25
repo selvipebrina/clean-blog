@@ -12,10 +12,12 @@ class BlogPostsController < ApplicationController
   end
 
   def create
+    require 'pry'
+    binding.pry
     @blog_post = ::BlogPost.new(blog_post_params)
     if @blog_post.valid?
       @blog_post.save
-      redirect_to blog_posts_url(@blog_post)
+      redirect_to @blog_post
     else
       render 'new'
     end
@@ -26,10 +28,12 @@ class BlogPostsController < ApplicationController
   end
 
   def update
+    require 'pry'
+    binding.pry
     @blog_post = ::BlogPost.find(params[:id])
     if @blog_post.valid?
       @blog_post.update_attributes(blog_post_params)
-      redirect_to blog_posts_url(@blog_post)
+      redirect_to @blog_post
     else
       render 'edit'
     end

@@ -14,11 +14,9 @@ class UsersController < ApplicationController
 
   def create
     @user = ::User.new(user_params)
-    @user.password = params[:password]
-    @user.password_confirmation = params[:password_confirmation]
     if @user.valid?
       @user.save
-      redirect_to users_url(@user)
+      redirect_to users_url
     else
       render 'new'
     end
@@ -50,6 +48,8 @@ class UsersController < ApplicationController
     params.required(:user)
       .permit(:name,
               :email,
-              :is_admin)
+              :is_admin,
+              :password,
+              :password_confirmation)
   end
 end

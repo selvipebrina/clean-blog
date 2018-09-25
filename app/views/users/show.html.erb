@@ -1,4 +1,10 @@
-<a class="btn btn-primary" href="<%= users_path %>">Back</a>
+<ul class="list-inline">
+<li><a class="btn btn-primary" href="<%= users_path %>">Back</a></li>
+<li><%= button_to 'Delete',
+            user_path(@user.id),
+            method: :delete,
+            class: 'btn btn-danger' %></li>
+</ul>
 
 <table class="table table-bordered">
   <tbody>
